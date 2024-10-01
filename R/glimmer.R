@@ -189,7 +189,7 @@ xparse_glimmer_formula <- function( formula , data ) {
     # des_frame_fixef <- cbind( data[[outcome_name]] , des_frame_fixef )
     # colnames(des_frame_fixef)[1] <- outcome_name
     outcome <- model.frame(f_nobars, data)[,1]
-    if (class(outcome) == "matrix") {
+    if ("matrix" %in% class(outcome)) {
         # fix outcome name
         outcome_name <- colnames(outcome)[1]
     }
