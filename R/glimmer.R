@@ -269,7 +269,7 @@ glimmer <- function( formula , data , family="gaussian" , prefix=c("b_","v_") , 
     # check for size variable in Binomial
     dtext <- family_liks[[family]]
     if ( family=="binomial" ) {
-        if ( class(pf$y)=="matrix" ) {
+        if ( "matrix" %in% class(pf$y) ) {
             # cbind input
             pf$dat[[pf$yname]] <- as.integer(pf$y[,1])
             pf$dat[[concat(pf$yname,"_size")]] <- as.integer(apply(pf$y,1,sum))
