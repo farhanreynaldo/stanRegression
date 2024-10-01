@@ -1130,7 +1130,7 @@ map2stan <- function( flist , data , start , pars , constraints=list() , types=l
             type_dim <- ""
             constraint <- ""
             
-            if ( class(start[[i]])=="matrix" ) {
+            if ( "matrix" %in% class(start[[i]]) ) {
                 # check for square matrix? just use nrow for now.
                 #type <- concat( "cov_matrix[" , nrow(start[[i]]) , "]" )
                 type <- "cov_matrix"
